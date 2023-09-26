@@ -18,13 +18,14 @@ This code snippet executes the following tasks:
 
 ```json
 {
+    "UserIdentity": "4fca2ec0-4b36-469d-80b3-aa8df406971d",
     "UserPrincipalName": "JohnDoe@domain",
-    "UserId": "4fca2ec0-4b36-469d-80b3-aa8df406971d",
 }
 ```
 
 > :exclamation: It is important to note that the names of your form fields might differ. Ensure that the `$formObject` hashtable is appropriately adjusted to match your form fields.
+> The `UserIdentity` accepts different values [See the Microsoft Docs page](https://learn.microsoft.com/en-us/graph/api/user-delete?view=graph-rest-1.0&tabs=http#http-request)
 
-2. Receive a bearer token by making a POST request to: `https://login.microsoftonline.com/$AADTenantID/oauth2/token`, where `$AADTenantID` is the ID of your Azure Active Directory tenant.
+1. Receive a bearer token by making a POST request to: `https://login.microsoftonline.com/$AADTenantID/oauth2/token`, where `$AADTenantID` is the ID of your Azure Active Directory tenant.
 
-3. Delete the user account using the: `Invoke-RestMethod` cmdlet.
+2. Delete the user account using the: `Invoke-RestMethod` cmdlet.
